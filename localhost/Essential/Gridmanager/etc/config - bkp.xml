@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Essential_Grid>
+            <version>1.0.0</version>
+        </Essential_Grid>
+    </modules>
+     <global>
+        <blocks>
+            <grid>
+                <class>Essential_Grid_Block</class>
+            </grid>
+            <blog>
+                <rewrite>
+                    <last>Essential_Grid_Rewrite_Widget_BlogLast</last>
+                </rewrite>
+            </blog>
+        </blocks>
+        <models>
+             <grid>
+                <class>Essential_Grid_Model</class>
+                <resourceModel>grid_resource</resourceModel>
+            </grid> 
+
+            <grid_resource>
+                <class>Essential_Grid_Model_Resource</class>
+                <entities>
+                    <table_themes>
+                        <table>essential_grid</table>
+                    </table_themes>
+
+                    <table_theme_config_data>
+                        <table>essential_grid_config_data</table>
+                    </table_theme_config_data>
+                </entities>
+            </grid_resource> 
+           <!--  <core>
+                <rewrite>
+                    <layout>Essential_Grid_Rewrite_Core_Layout</layout> 
+                </rewrite>
+            </core> -->
+           <!--  <catalog>
+                <rewrite>
+                    <product>Essential_Grid_Rewrite_Catalog_Product</product>    <!-- Mage_Catalog_Model_Product 
+                </rewrite>
+            </catalog> -->
+
+           <!--  <catalog>
+                <rewrite>
+                    <template_filter>Essential_Grid_Rewrite_Catalog_Template_CatalogFilter</template_filter>  
+                </rewrite>
+            </catalog> -->
+
+           <!--  <catalog_resource>
+                <rewrite>
+                    <layer_filter_attribute>Essential_Grid_Rewrite_Catalog_Resource_LayerFilterAttribute</layer_filter_attribute>  
+                </rewrite>
+            </catalog_resource> -->
+
+           <!--  <widget>
+                <rewrite>
+                    <template_filter>Essential_Grid_Rewrite_Catalog_Template_WidgetFilter</template_filter>    
+                </rewrite>
+            </widget> -->
+        </models>
+       
+       <resources>
+            <grid_setup>
+                <setup>
+                    <module>Essential_Grid</module>
+                    <class>Essential_Grid_Model_Resource_Setup</class>
+                </setup>
+            </grid_setup>
+        </resources>
+       <helpers>
+            <grid>
+                <class>Essential_Grid_Helper</class>
+            </grid>
+        </helpers>		
+    </global>
+        <admin>
+            <routers>
+                <adminhtml>
+                    <args>
+                        <modules>
+                            <grid after="Mage_Adminhtml">Essential_Grid_Adminhtml</grid>
+                        </modules>
+                    </args>
+                </adminhtml>
+            </routers>
+        </admin>
+    <frontend>
+        <layout>
+            <updates>
+                <grid>
+                    <file>grid.xml</file>
+                </grid>
+            </updates>
+        </layout>
+        <routers>
+            <grid>
+                <use>standard</use>
+                <args>
+                    <module>Essential_Grid</module>
+                    <frontName>grid</frontName>
+                </args>
+            </grid>
+        </routers>
+    </frontend>
+</config>

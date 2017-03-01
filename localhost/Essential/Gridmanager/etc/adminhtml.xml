@@ -1,0 +1,61 @@
+<?xml version="1.0"?> 
+<config>
+	<menu>
+		<essential translate="title" module="gridmanager">
+			<title>Essential Grid</title>
+			<sort_order>100</sort_order> 
+			<children>
+                    <essgrid translate="title">
+                        <title>Ess Grid</title>
+                        <sort_order>10</sort_order>
+			            <action>gridmanager/adminhtml_gridmanager</action>
+                    </essgrid>
+					 <itemskin translate="title">
+                        <title>Item Skin Editor</title>
+                        <sort_order>20</sort_order>
+			            <action>gridmanager/adminhtml_itemskin</action>
+                    </itemskin>
+					 <handlig translate="title">
+                        <title>Data Handlig</title>
+                        <sort_order>30</sort_order>
+			            <action>gridmanager/adminhtml_gridmanager/datahandling</action>
+                    </handlig>
+					 <searchsetting translate="title">
+                        <title>Search Settings</title>
+                        <sort_order>40</sort_order>
+			            <action>gridmanager/adminhtml_gridmanager/searchsettings</action>
+                    </searchsetting>
+					 <setting translate="title">
+                        <title>Global Settings</title>
+                        <sort_order>50</sort_order>
+			            <action>gridmanager/adminhtml_gridmanager/globalsetting</action>
+                    </setting>
+					   <imexort translate="title">
+                        <title>Import/Export</title>
+                        <sort_order>60</sort_order>
+			            <action>gridmanager/adminhtml_gridmanager/imexport</action>
+                    </imexort>
+             </children>
+		</essential>
+	</menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<gridmanager>
+										<title>Ess Grid Setting</title>
+									</gridmanager>
+								</children>								
+							</config>
+						</children>
+					</system>				
+				</children>
+			</admin>
+        </resources>
+	</acl>
+</config>
+
